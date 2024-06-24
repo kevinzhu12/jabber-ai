@@ -8,7 +8,17 @@ import { IoIosCloseCircle, IoIosCloseCircleOutline } from "react-icons/io";
 
 const MyWrapper = ({ children }) => {
   return (
-    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 5 }}>
+    <ResponsiveMasonry
+      columnsCountBreakPoints={{
+        350: 1,
+        600: 1,
+        750: 2,
+        900: 2,
+        1000: 3,
+        1200: 6,
+        1300: 7,
+      }}
+    >
       <Masonry>{children}</Masonry>
     </ResponsiveMasonry>
   );
