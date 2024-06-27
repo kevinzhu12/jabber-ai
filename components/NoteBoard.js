@@ -16,9 +16,9 @@ const MyWrapper = ({ children }) => {
         600: 1,
         750: 2,
         900: 3,
-        1000: 4,
-        1200: 6,
-        1300: 7,
+        1200: 4,
+        1400: 5,
+        1600: 6,
       }}
     >
       <Masonry>{children}</Masonry>

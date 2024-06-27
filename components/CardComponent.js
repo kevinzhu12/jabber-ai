@@ -24,7 +24,7 @@ const CardComponent = ({
     <Card
       ref={drag}
       key={key}
-      className={`h-fit w-68 m-5 transition duration-300 ease-in-out ${
+      className={`h-fit w-200 m-5 transition duration-300 ease-in-out ${
         excitedNotes.includes(note)
           ? "bg-custom-card-gradient less-intense-ping"
           : noteColors[randomIndex][0]
