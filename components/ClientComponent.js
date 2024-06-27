@@ -3,9 +3,10 @@ import { useState } from "react";
 import { VoiceProvider } from "@humeai/voice-react";
 import Messages from "./Messages";
 import Controls from "./Controls";
-import CategoryPage from "./CategoryPage";
+import NoteBoard from "./NoteBoard";
 import CategoryPage2 from "./CategoryPage2";
 import Avatar, { genConfig } from "react-nice-avatar";
+import { Button } from "./ui/button";
 
 export default function ClientComponent({ accessToken }) {
   const [notes, setNotes] = useState([]);
@@ -39,9 +40,9 @@ export default function ClientComponent({ accessToken }) {
   };
 
   return (
-    <div className="min-h-screen min-w-full flex bg-custom-radial-gradient">
-      <div className="flex-1">
-        <CategoryPage
+    <div className=" flex">
+      <div className="flex-1 min-h-screen bg-custom-radial-gradient">
+        <NoteBoard
           title="Jabber AI"
           notes={notes}
           newNotes={newNotes}
@@ -50,7 +51,12 @@ export default function ClientComponent({ accessToken }) {
       </div>
 
       <div className="w-80 bg-slate-800 flex flex-col justify-end items-center h-screen">
-        <Avatar className="w-32 h-32 " {...config} />
+        <div className="flex flex-col items-center m-10 space-y-5">
+          <Avatar className="w-32 h-32" {...config} />
+          <div className=" text-white text-center font-bold">
+            Brainstorm your project ideas with me!
+          </div>
+        </div>
         <VoiceProvider
           auth={{
             type: "accessToken",

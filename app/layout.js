@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Jabber AI",
-  description: "",
+  description: "Your Personal Brainstorm Assistant",
 };
 
 export default function RootLayout({ children }) {

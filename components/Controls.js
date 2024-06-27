@@ -20,7 +20,7 @@ export default function Controls() {
         </Button>
       ) : (
         <Button
-          className={`w-48 h-16 border-2 rounded-lg font-bold text-lg ${
+          className={`w-48 h-16 border-2 font-bold text-lg ${
             connecting ? " bg-yellow-200" : "bg-green-200"
           }`}
           onClick={() => {

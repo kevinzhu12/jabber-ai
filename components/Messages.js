@@ -57,31 +57,28 @@ export default function Messages({ notes, newNotes, newExcitedNotes }) {
   }, [messages]);
 
   return (
-    <div className="flex flex-col-reverse flex-nowrap overflow-auto w-80 mt-1/2 p-6">
-      {messages
-        .slice(-6)
-        .toReversed()
-        .map((msg, index) => {
-          if (msg.type === "user_message" || msg.type === "assistant_message") {
-            return (
-              <div
-                key={msg.type + index}
-                className="justify-start items-start my-2 px-4"
+    <div className="flex flex-col-reverse flex-nowrap overflow-y-auto w-80 h-2/3 mt-1/2 p-6 ">
+      {messages.toReversed().map((msg, index) => {
+        if (msg.type === "user_message" || msg.type === "assistant_message") {
+          return (
+            <div
+              key={msg.type + index}
+              className="justify-start items-start my-2 px-4"
+            >
+              <p
+                className={`${
+                  index == 0 ? "text-white" : "text-slate-400"
+                } font-bold`}
               >
-                <p
-                  className={`${
-                    index == 0 ? "text-white" : "text-slate-400"
-                  } font-bold`}
-                >
-                  {msg.type === "user_message" ? "You:" : "Mindy:"}
-                </p>
-                <p className={index == 0 ? "text-white" : "text-slate-400"}>
-                  {msg.message.content}
-                </p>
-              </div>
-            );
-          }
-        })}
+                {msg.type === "user_message" ? "You:" : "Mindy:"}
+              </p>
+              <p className={index == 0 ? "text-white" : "text-slate-400"}>
+                {msg.message.content}
+              </p>
+            </div>
+          );
+        }
+      })}
     </div>
   );
 }

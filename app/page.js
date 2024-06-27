@@ -1,5 +1,7 @@
 import ClientComponent from "@/components/ClientComponent";
 import { fetchAccessToken } from "@humeai/voice";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default async function Home() {
   const accessToken = await fetchAccessToken({
@@ -11,5 +13,9 @@ export default async function Home() {
     throw new Error();
   }
 
-  return <ClientComponent accessToken={accessToken} />;
+  return (
+    <div>
+      <ClientComponent accessToken={accessToken} />
+    </div>
+  );
 }
