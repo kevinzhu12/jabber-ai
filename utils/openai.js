@@ -35,7 +35,8 @@ export async function takeNotes(userMessage) {
 
   const response = await openai.chat.completions.create({
     messages: msg,
-    model: "gpt-4o",
+    // model: "gpt-4o",
+    model: "gpt-3.5-turbo",
   });
 
   const textResponse = response.choices[0].message.content;
